@@ -17,7 +17,7 @@
     <body>
 <!-- start header section -->
        <div class="header section">
-           <div class="navbar">
+           <div class="navbar" id="navbar">
             <div class="container">
                 <div class="logo">start bootstrap</div>
                 <div class="nav">
@@ -30,7 +30,7 @@
                 </div>
             </div>
            </div>
-           <div class="header-content">
+           <div class="header-content" id="header">
                <div class="overlay">
                <div class="header-content-items">                   
                    <h1 class="main-title">your fovorite source of free bootstrap themes
@@ -45,7 +45,7 @@
 
        <!-- end header section -->
 
-       <div class="about section">
+       <div class="about section" id="about">
            <h2 class="about-heading">We've got what you need!
            </h2>
            <span class="line"></span>
@@ -213,5 +213,26 @@
                 Copyright &copy; 2020 - Start Bootstrap
             </div>
         <!-- end footer -->
+
+        <script>
+            let navbar = document.getElementById('navbar');
+            let about = document.getElementById('about');
+            let h = about.offsetTop;
+            console.log(h);
+            onscroll=function(){
+          if(scrollY>=h){
+               let a = document.querySelectorAll('.navbar a');
+               navbar.style.backgroundColor="rgb(0,0,0)";
+               navbar.style.transition="background-color 1s";
+               navbar.style.marginTop="0px";
+               navbar.style.paddingTop="10px";
+               navbar.style.height="50px";
+
+          }else {
+            navbar.style.backgroundColor="transparent";
+
+          }
+        }
+        </script>
     </body>
 </html>
